@@ -1,0 +1,88 @@
+/* Basic structure */
+.navbar {
+  background-color: rgba(87, 150, 106, 0.2); 
+  /* background-color: transparent; */
+  backdrop-filter: blur(10px); /* blur effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  color: rgb(8, 1, 1);
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #110808;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1abc9c;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: white;
+  color: #57966a;
+  border: 2px solid white;
+}
+
+.login-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.signup-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.signup-btn:hover {
+  background-color: white;
+  color: #57966a;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .signup-btn {
+    display: none;
+  }
+}
