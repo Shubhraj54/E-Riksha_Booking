@@ -74,6 +74,11 @@
   font-size: 28px;
   margin-bottom: 30px;
   color: #333;
+  transition: color 0.3s;
+}
+
+html.dark .how-it-works h2 {
+  color: #fff;
 }
 
 .steps {
