@@ -26,7 +26,7 @@ A modern, professional E-Riksha rental booking platform built with React, TypeSc
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/e-riksha-rental-services.git
+   git clone https://github.com/shubhraj54/e-riksha-rental-services.git
    cd e-riksha-rental-services
    ```
 
