@@ -25,6 +25,12 @@
   color: #2e7d32;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .booking-form input {
   padding: 12px;
   border: 1px solid #ccc;
@@ -32,10 +38,31 @@
   font-size: 16px;
   background: #f8f9fa;
   color: #2e7d32;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .booking-form input:focus {
   border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
+  outline: none;
+}
+
+.booking-form input.error {
+  border-color: #d32f2f;
+  background-color: #fff5f5;
+}
+
+.booking-form input.error:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+  padding-left: 4px;
 }
 
 .book-now-button {
@@ -50,8 +77,14 @@
   transition: background 0.3s;
 }
 
-.book-now-button:hover {
+.book-now-button:hover:not(:disabled) {
   background: #1b5e20;
+}
+
+.book-now-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .selected-riksha {
@@ -192,4 +225,204 @@ html.dark .btn.secondary {
 html.dark .btn.secondary:hover {
   background: #1a2a1a;
   color: #7be6a2;
+}
+
+/* Pickup Point Selection */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.select-pickup-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.select-pickup-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-1px);
+}
+
+.selected-pickup {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pickup-info h4 {
+  margin: 0 0 4px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pickup-info p {
+  margin: 0 0 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.pickup-type {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.change-pickup-btn {
+  padding: 8px 16px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.change-pickup-btn:hover {
+  background: #1565c0;
+  transform: translateY(-1px);
+}
+
+/* Location Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.location-modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 2px solid #f0f0f0;
+  background: #f8f9fa;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* Dark Mode Support for Pickup Features */
+html.dark .form-label {
+  color: #fff;
+}
+
+html.dark .select-pickup-btn {
+  background: #1abc9c;
+}
+
+html.dark .select-pickup-btn:hover {
+  background: #16a085;
+}
+
+html.dark .selected-pickup {
+  background: #3d3d3d;
+  border-color: #555;
+}
+
+html.dark .pickup-info h4 {
+  color: #fff;
+}
+
+html.dark .pickup-info p {
+  color: #ccc;
+}
+
+html.dark .pickup-type {
+  background: #1a1a1a;
+  color: #3498db;
+}
+
+html.dark .change-pickup-btn {
+  background: #3498db;
+}
+
+html.dark .change-pickup-btn:hover {
+  background: #2980b9;
+}
+
+html.dark .location-modal {
+  background: #2d2d2d;
+}
+
+html.dark .modal-header {
+  background: #3d3d3d;
+  border-bottom-color: #555;
+}
+
+html.dark .modal-header h3 {
+  color: #1abc9c;
+}
+
+html.dark .close-btn {
+  color: #ccc;
+}
+
+html.dark .close-btn:hover {
+  background: #555;
+  color: #fff;
 }

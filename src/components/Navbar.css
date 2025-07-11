@@ -276,6 +276,15 @@ html.dark {
   }
 }
 
+/* Mobile Notification Bell */
+.mobile-notification-bell {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
 /* Utility Classes */
 .desktop-only {
   display: block;

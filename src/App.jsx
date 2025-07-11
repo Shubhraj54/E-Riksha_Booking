@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { NotificationProvider } from './contexts/NotificationContext';
+import { initializeSampleData } from './utils/sampleData';
+import './utils/adminSetup'; // Auto-setup admin user
 import About from './pages/About';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -9,28 +13,88 @@ import Signup from './pages/Signup';
 import Book from './pages/Booking';
 import Riksha from './pages/Riksha';
 import Profile from './pages/Profile';
+import VehicleManagementPage from './pages/VehicleManagementPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
+import DriverManagementPage from './pages/DriverManagementPage';
 import MainLayout from './components/MainLayout';
 import BookForm from './pages/BookForm';
+import NotFound from './pages/NotFound';
+// Admin Panel Components
+import AdminLayout from './components/AdminLayout';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminUsers from './pages/AdminUsers';
+import AdminBookings from './pages/AdminBookings';
+import AdminPayments from './pages/AdminPayments';
+import AdminSettings from './pages/AdminSettings';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Initialize sample data for testing
+    initializeSampleData();
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/book" element={<Book />} />
-          <Route path="/bookForm" element={<BookForm />} />
-          <Route path="/rickshaws" element={<Riksha />} />
-          <Route path="/profile" element={<Profile />} />
-        </Route>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <NotificationProvider>
+      <BrowserRouter>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+            },
+            success: {
+              duration: 3000,
+              iconTheme: {
+                primary: '#4ade80',
+                secondary: '#fff',
+              },
+            },
+            error: {
+              duration: 5000,
+              iconTheme: {
+                primary: '#ef4444',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
+        <Routes>
+          {/* Main Site Routes */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/bookForm" element={<BookForm />} />
+            <Route path="/rickshaws" element={<Riksha />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/vehicle-management" element={<VehicleManagementPage />} />
+            <Route path="/driver-management" element={<DriverManagementPage />} />
+            <Route path="/admin" element={<AdminDashboardPage />} />
+          </Route>
+
+          {/* Admin Panel Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route element={<AdminLayout />}>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/admin/driver-management" element={<DriverManagementPage />} />
+            <Route path="/admin/vehicle-management" element={<VehicleManagementPage />} />
+            <Route path="/admin/bookings" element={<AdminBookings />} />
+            <Route path="/admin/payments" element={<AdminPayments />} />
+            <Route path="/admin/settings" element={<AdminSettings />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </NotificationProvider>
   );
 }
 

@@ -53,7 +53,7 @@ A modern, professional E-Riksha rental booking platform built with React, TypeSc
 
 ```
 src/
-├── components/          # Reusable UI components
+├── components/         # Reusable UI components
 ├── pages/              # Page components
 ├── store/              # Redux store configuration
 ├── hooks/              # Custom React hooks

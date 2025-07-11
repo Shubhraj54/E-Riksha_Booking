@@ -2,11 +2,14 @@
 .profile-container {
   min-height: 70vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: none;
   margin: 40px auto 0 auto;
   padding: 0 0 40px 0;
+  width: 100%;
+  max-width: 1200px;
 }
 .profile-card.profile-flex {
   display: flex;
@@ -225,4 +228,320 @@ html.dark .bookings-table td {
 }
 html.dark .no-bookings {
   color: #4a5a4e;
+}
+
+/* Tab Navigation */
+.profile-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  background: white;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.tab-btn.active {
+  background: #2e7d32;
+  color: white;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Calendar Tab */
+.calendar-tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Selected Bookings */
+.selected-bookings {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.selected-bookings h3 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.booking-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #2e7d32;
+  transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+  background: #e8f5e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.booking-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.status-badge.confirmed {
+  background: #2e7d32;
+}
+
+.status-badge.pending {
+  background: #f57c00;
+}
+
+.status-badge.cancelled {
+  background: #d32f2f;
+}
+
+.status-badge.completed {
+  background: #1976d2;
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-details p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.booking-details strong {
+  color: #333;
+}
+
+/* Responsive Design for Tabs */
+@media (max-width: 768px) {
+  .profile-tabs {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .selected-bookings {
+    padding: 16px;
+    margin-top: 16px;
+  }
+}
+
+/* Dark Mode for Tabs */
+html.dark .profile-tabs {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .tab-btn {
+  color: #ccc;
+}
+
+html.dark .tab-btn.active {
+  background: #1abc9c;
+  box-shadow: 0 2px 8px rgba(26, 188, 156, 0.3);
+}
+
+html.dark .tab-btn:hover:not(.active) {
+  background: #3d3d3d;
+  color: #fff;
+}
+
+html.dark .selected-bookings {
+  background: #2d2d2d;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .selected-bookings h3 {
+  color: #1abc9c;
+}
+
+html.dark .booking-card {
+  background: #3d3d3d;
+  border-left-color: #1abc9c;
+}
+
+html.dark .booking-card:hover {
+  background: #1a2a1a;
+}
+
+html.dark .booking-header h4 {
+  color: #fff;
+}
+
+html.dark .booking-details p {
+  color: #ccc;
+}
+
+html.dark .booking-details strong {
+  color: #fff;
+}
+
+/* Demo Notification Buttons */
+.demo-notifications {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.demo-notifications h4 {
+  color: #2e7d32;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.demo-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.demo-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-btn.booking {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.demo-btn.booking:hover {
+  background: #c8e6c9;
+}
+
+.demo-btn.payment {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.demo-btn.payment:hover {
+  background: #bbdefb;
+}
+
+.demo-btn.system {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.demo-btn.system:hover {
+  background: #ffe0b2;
+}
+
+/* Responsive Design for Demo Buttons */
+@media (max-width: 768px) {
+  .demo-buttons {
+    flex-direction: column;
+  }
+  
+  .demo-btn {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
+
+/* Dark Mode for Demo Buttons */
+html.dark .demo-notifications {
+  background: #2d2d2d;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .demo-notifications h4 {
+  color: #1abc9c;
+}
+
+html.dark .demo-btn.booking {
+  background: #1a2a1a;
+  color: #1abc9c;
+}
+
+html.dark .demo-btn.booking:hover {
+  background: #2a3a2a;
+}
+
+html.dark .demo-btn.payment {
+  background: #1a2a2a;
+  color: #64b5f6;
+}
+
+html.dark .demo-btn.payment:hover {
+  background: #2a3a3a;
+}
+
+html.dark .demo-btn.system {
+  background: #2a1a1a;
+  color: #ffb74d;
+}
+
+html.dark .demo-btn.system:hover {
+  background: #3a2a2a;
 }

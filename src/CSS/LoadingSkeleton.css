@@ -1,0 +1,322 @@
+/* LoadingSkeleton.css */
+
+/* Base skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Skeleton wrapper */
+.skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Rickshaw Card Skeleton */
+.skeleton-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.skeleton-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 70%;
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+.skeleton-button {
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* Booking Form Skeleton */
+.skeleton-form {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.skeleton-form-header {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skeleton-form-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skeleton-input {
+  height: 45px;
+  border-radius: 8px;
+}
+
+.skeleton-button.large {
+  height: 45px;
+  margin-top: 10px;
+}
+
+/* Profile Skeleton */
+.skeleton-profile {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.skeleton-profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 300px;
+}
+
+.skeleton-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.skeleton-profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skeleton-profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.skeleton-label {
+  height: 16px;
+  width: 80px;
+}
+
+.skeleton-value {
+  height: 16px;
+  width: 150px;
+}
+
+/* Stats Skeleton */
+.skeleton-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skeleton-stat-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.skeleton-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton-stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-stat-number {
+  height: 24px;
+  width: 60px;
+}
+
+.skeleton-stat-label {
+  height: 16px;
+  width: 100px;
+}
+
+/* Table Row Skeleton */
+.skeleton-table-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #2e7d32;
+}
+
+.skeleton-table-cell {
+  height: 16px;
+  width: 100%;
+}
+
+/* Text Container Skeleton */
+.skeleton-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skeleton-form {
+    flex-direction: column;
+  }
+  
+  .skeleton-form-header {
+    width: 100%;
+  }
+  
+  .skeleton-profile {
+    flex-direction: column;
+  }
+  
+  .skeleton-profile-header {
+    width: 100%;
+  }
+  
+  .skeleton-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* Dark Mode Support */
+html.dark .skeleton {
+  background: linear-gradient(90deg, #3d3d3d 25%, #2d2d2d 50%, #3d3d3d 75%);
+  background-size: 200px 100%;
+}
+
+html.dark .skeleton-card {
+  background: #2d2d2d;
+}
+
+html.dark .skeleton-stat-card {
+  background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+  border-color: #444;
+}
+
+html.dark .skeleton-table-row {
+  background: #3d3d3d;
+  border-left-color: #1abc9c;
+}
+
+/* Loading states for specific components */
+.skeleton-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.skeleton-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+/* Pulse animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Specific skeleton variations */
+.skeleton-image.large {
+  height: 250px;
+}
+
+.skeleton-button.medium {
+  height: 35px;
+  width: 120px;
+}
+
+.skeleton-button.small {
+  height: 30px;
+  width: 80px;
+}
+
+/* Grid layouts for multiple skeletons */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inline skeleton for text */
+.skeleton-inline {
+  display: inline-block;
+  width: 100px;
+  height: 16px;
+  margin: 0 5px;
+} 
