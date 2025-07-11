@@ -1,62 +1,112 @@
 [
   {
-    "id": 1,
-    "name": "Green E-Rickshaw",
+    "id": 101,
+    "name": "E-Riksha Alpha",
+    "number": "E-Riksha #A123",
+    "driverName": "Ramesh Kumar",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    "desc": "Eco-friendly, 4-seater, AC available."
+    "desc": "Speed: 25km/h | Mileage: 100km/charge | Charging Time: 4h"
   },
   {
-    "id": 2,
-    "name": "Classic E-Rickshaw",
+    "id": 102,
+    "name": "E-Riksha Beta",
+    "number": "E-Riksha #B234",
+    "driverName": "Suresh Singh",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    "desc": "Classic design, 3-seater, best for city rides."
+    "desc": "Speed: 28km/h | Mileage: 110km/charge | Charging Time: 3.5h"
   },
   {
-    "id": 3,
-    "name": "Family E-Rickshaw",
+    "id": 103,
+    "name": "E-Riksha Gamma",
+    "number": "E-Riksha #C345",
+    "driverName": "Amit Verma",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-    "desc": "Spacious, 6-seater, family friendly."
+    "desc": "Speed: 27km/h | Mileage: 105km/charge | Charging Time: 4h"
   },
   {
-    "id": 4,
-    "name": "Premium E-Rickshaw",
+    "id": 104,
+    "name": "E-Riksha Delta",
+    "number": "E-Riksha #D456",
+    "driverName": "Sunil Yadav",
+    "type": "Electric",
+    "status": "available",
+    "image": "https://images.unsplash.com/photo-1465101178521-c1a9136a3c5c?auto=format&fit=crop&w=400&q=80",
+    "desc": "Speed: 26km/h | Mileage: 98km/charge | Charging Time: 4.5h"
+  },
+  {
+    "id": 105,
+    "name": "E-Riksha Epsilon",
+    "number": "E-Riksha #E567",
+    "driverName": "Vijay Sharma",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-    "desc": "Premium comfort, 4-seater, luxury interiors."
+    "desc": "Speed: 30km/h | Mileage: 120km/charge | Charging Time: 3h"
   },
   {
-    "id": 5,
-    "name": "Cargo E-Rickshaw",
-    "image": "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80",
-    "desc": "Spacious cargo, ideal for goods transport."
-  },
-  {
-    "id": 6,
-    "name": "Mini E-Rickshaw",
+    "id": 106,
+    "name": "E-Riksha Zeta",
+    "number": "E-Riksha #F678",
+    "driverName": "Rajesh Gupta",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    "desc": "Compact, 2-seater, easy city navigation."
+    "desc": "Speed: 24km/h | Mileage: 90km/charge | Charging Time: 5h"
   },
   {
-    "id": 7,
-    "name": "Tourist E-Rickshaw",
+    "id": 107,
+    "name": "E-Riksha Eta",
+    "number": "E-Riksha #G789",
+    "driverName": "Manoj Kumar",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-    "desc": "Open roof, sightseeing, 4-seater."
+    "desc": "Speed: 29km/h | Mileage: 115km/charge | Charging Time: 3.5h"
   },
   {
-    "id": 8,
-    "name": "Deluxe E-Rickshaw",
+    "id": 108,
+    "name": "E-Riksha Theta",
+    "number": "E-Riksha #H890",
+    "driverName": "Deepak Singh",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    "desc": "Deluxe seats, music system, 4-seater."
+    "desc": "Speed: 25km/h | Mileage: 100km/charge | Charging Time: 4h"
   },
   {
-    "id": 9,
-    "name": "School E-Rickshaw",
+    "id": 109,
+    "name": "E-Riksha Iota",
+    "number": "E-Riksha #I901",
+    "driverName": "Sanjay Mehta",
+    "type": "Electric",
+    "status": "available",
+    "image": "https://images.unsplash.com/photo-1465101178521-c1a9136a3c5c?auto=format&fit=crop&w=400&q=80",
+    "desc": "Speed: 27km/h | Mileage: 108km/charge | Charging Time: 4h"
+  },
+  {
+    "id": 110,
+    "name": "E-Riksha Kappa",
+    "number": "E-Riksha #J012",
+    "driverName": "Anil Joshi",
+    "type": "Electric",
+    "status": "available",
     "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
-    "desc": "Safe for kids, 8-seater, school runs."
+    "desc": "Speed: 26km/h | Mileage: 102km/charge | Charging Time: 4.2h"
   },
   {
-    "id": 10,
-    "name": "VIP E-Rickshaw",
-    "image": "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80",
-    "desc": "VIP service, AC, premium ride experience."
+    "id": 111,
+    "name": "E-Riksha Lambda",
+    "number": "E-Riksha #K123",
+    "driverName": "Pankaj Saini",
+    "type": "Electric",
+    "status": "available",
+    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    "desc": "Speed: 28km/h | Mileage: 112km/charge | Charging Time: 3.8h"
   }
 ]

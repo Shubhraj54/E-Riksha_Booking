@@ -1,12 +1,26 @@
-/* Uses CSS variables for dark/light mode */
+/* Riksha.css - unified with Home page style */
+.home-wrapper {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.home-wrapper h2 {
+  color: #2e7d32;
+  margin-bottom: 24px;
+  font-size: 28px;
+  text-align: center;
+}
+
 .riksha-browse-container {
   max-width: 1100px;
-  margin: 40px auto;
-  padding: 24px;
-  background: var(--primary-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 4px 16px rgba(0,0,0,0.08));
+  margin: 40px auto 0 auto;
+  padding: 32px 24px 40px 24px;
+  background: #fff;
+  color: #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
 .riksha-list {
@@ -17,14 +31,14 @@
 }
 
 .riksha-card {
-  background: var(--card-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,0.07));
+  background: #f8f9fa;
+  color: #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   padding: 18px 16px 12px 16px;
   text-align: center;
   cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
   width: 220px;
   border: 2px solid transparent;
   position: relative;
@@ -32,7 +46,7 @@
 
 .riksha-card:hover {
   box-shadow: 0 4px 16px rgba(87,150,106,0.15);
-  border-color: #57966a;
+  border-color: #2e7d32;
   transform: translateY(-4px) scale(1.03);
 }
 
@@ -46,10 +60,10 @@
 
 .view-features-btn {
   margin-top: 10px;
-  background: var(--btn-bg);
-  color: var(--btn-fg);
+  background: #2e7d32;
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 8px 18px;
   font-size: 15px;
   cursor: pointer;
@@ -57,7 +71,7 @@
 }
 
 .view-features-btn:hover {
-  background: #417a52;
+  background: #1b5e20;
 }
 
 .riksha-features-modal {
@@ -71,15 +85,14 @@
 }
 
 .riksha-features-content {
-  background: var(--primary-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
+  background: #fff;
+  color: #2e7d32;
+  border-radius: 12px;
   padding: 32px 24px;
   max-width: 400px;
   width: 90vw;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 
 .riksha-img-large {
@@ -92,21 +105,69 @@
 
 .features-list {
   text-align: left;
-  margin: 18px 0 24px 0;
+  margin: 18px 0 18px 0;
   padding-left: 18px;
+  color: #444;
 }
 
 .close-btn {
-  background: #57966a;
+  margin-top: 18px;
+  background: #2e7d32;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 8px 18px;
+  border-radius: 8px;
+  padding: 10px 18px;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .close-btn:hover {
-  background: #417a52;
+  background: #1b5e20;
+}
+
+@media (max-width: 600px) {
+  .riksha-browse-container {
+    padding: 10px 2vw 24px 2vw;
+    margin: 18px auto 0 auto;
+  }
+  .riksha-list {
+    gap: 10px;
+  }
+  .riksha-card {
+    width: 98vw;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .riksha-features-content {
+    padding: 18px 4vw;
+  }
+}
+
+html.dark .riksha-browse-container {
+  background: #23272b;
+  color: #b6e3c6;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.32);
+}
+
+html.dark .riksha-card {
+  background: #23272b;
+  color: #b6e3c6;
+}
+
+html.dark .view-features-btn, html.dark .close-btn {
+  background: #1abc9c;
+}
+
+html.dark .view-features-btn:hover, html.dark .close-btn:hover {
+  background: #16a085;
+}
+
+html.dark .riksha-features-content {
+  background: #23272b;
+  color: #b6e3c6;
+}
+
+html.dark .features-list {
+  color: #b6c7b9;
 }

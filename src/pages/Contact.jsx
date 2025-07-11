@@ -6,10 +6,8 @@ function Contact() {
     <div className="page-container">
       <h2>Contact Us</h2>
       <p>
-        📞 Phone: +91 9876543210  
-        <br />
-        📧 Email: support@erickshawrent.com  
-        <br />
+        📞 Phone: +91 9876543210  <br />
+        📧 Email: support@erickshawrent.com  <br />
         🏠 Address: 123 Green Street, Delhi, India
       </p>
     </div>

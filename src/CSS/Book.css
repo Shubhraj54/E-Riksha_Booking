@@ -1,25 +1,31 @@
-/* Uses CSS variables for dark/light mode */
-.booking-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 32px 24px;
-  background: var(--primary-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 4px 16px rgba(0,0,0,0.08));
+/* Book.css - unified with Home page style */
+.home-wrapper {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial, sans-serif;
 }
 
-@media (max-width: 1000px) {
-  .booking-container {
-    max-width: 98vw;
-    padding: 16px 4vw;
-  }
-}
-
-.booking-container h2 {
-  text-align: center;
-  color: var(--primary-fg);
+.home-wrapper h2 {
+  color: #2e7d32;
   margin-bottom: 24px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.booking-container {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 32px 24px 40px 24px;
+  background: #fff;
+  color: #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.booking-container h3 {
+  color: #2e7d32;
+  margin-top: 24px;
 }
 
 .booking-form {
@@ -31,24 +37,22 @@
 .booking-form input {
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-  background: var(--card-bg);
-  color: var(--primary-fg);
+  background: #f8f9fa;
+  color: #2e7d32;
 }
 
 .booking-form input:focus {
-  border-color: #57966a;
+  border-color: #2e7d32;
 }
 
 .booking-form button {
-  background: var(--btn-bg);
-  color: var(--btn-fg);
+  background: #2e7d32;
+  color: #fff;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
@@ -56,12 +60,7 @@
 }
 
 .booking-form button:hover {
-  background: #417a52;
-}
-
-.booking-container h3 {
-  color: var(--primary-fg);
-  margin-top: 24px;
+  background: #1b5e20;
 }
 
 .riksha-list {
@@ -73,21 +72,20 @@
 }
 
 .riksha-card {
-  background: var(--card-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,0.07));
+  background: #f8f9fa;
+  color: #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   padding: 18px 16px 12px 16px;
   text-align: center;
-  cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.2s;
-  width: 200px;
+  width: 220px;
   border: 2px solid transparent;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
 }
 
 .riksha-card:hover {
   box-shadow: 0 4px 16px rgba(87,150,106,0.15);
-  border-color: #57966a;
+  border-color: #2e7d32;
   transform: translateY(-4px) scale(1.03);
 }
 
@@ -99,21 +97,73 @@
   margin-bottom: 10px;
 }
 
-.selected-riksha {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.back-btn {
-  background: none;
+.book-now-button {
+  margin-top: 10px;
+  background: #2e7d32;
+  color: #fff;
   border: none;
-  color: #57966a;
+  border-radius: 8px;
+  padding: 10px 18px;
   font-size: 15px;
   cursor: pointer;
-  margin-bottom: 16px;
-  text-decoration: underline;
+  transition: background 0.2s;
 }
 
-.back-btn:hover {
-  color: #417a52;
+.book-now-button:hover {
+  background: #1b5e20;
+}
+
+@media (max-width: 600px) {
+  .booking-container {
+    padding: 10px 2vw;
+  }
+  .riksha-list {
+    gap: 10px;
+  }
+  .riksha-card {
+    width: 98vw;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .booking-container {
+    max-width: 98vw;
+    padding: 18px 4vw 24px 4vw;
+    margin: 18px auto 0 auto;
+  }
+}
+
+html.dark .booking-container {
+  background: #23272b;
+  color: #b6e3c6;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.32);
+}
+
+html.dark .booking-form input {
+  background: #23272b;
+  color: #b6e3c6;
+  border-color: #3e4d41;
+}
+
+html.dark .booking-form button {
+  background: #1abc9c;
+}
+
+html.dark .booking-form button:hover {
+  background: #16a085;
+}
+
+html.dark .riksha-card {
+  background: #23272b;
+  color: #b6e3c6;
+}
+
+html.dark .book-now-button {
+  background: #1abc9c;
+}
+
+html.dark .book-now-button:hover {
+  background: #16a085;
 }

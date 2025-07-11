@@ -1,4 +1,4 @@
-/* App.css */
+/* App.css - minimal, let page CSS handle layout */
 
 body {
   margin: 0;
@@ -25,43 +25,3 @@ body > * {
   position: relative;
   z-index: 1;
 }
-
-/* 
-.navbar {
-  background-color: #57966a;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #1abc9c;
-}
-
-.page-box {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.page-box h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-.page-box p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
-} */

@@ -11,14 +11,25 @@ function Book() {
       <h2>Book Your E-Rickshaw</h2>
       {!selected && (
         <>
-          <p style={{textAlign: 'center', marginBottom: 24}}>Select a rickshaw to continue booking:</p>
+          <p style={{ textAlign: 'center', marginBottom: 24 }}>
+            Select a rickshaw to continue booking:
+          </p>
           <div className="riksha-list">
             {rikshaList.map(riksha => (
               <div key={riksha.id} className={`riksha-card`}>
-                <img src={riksha.image} alt={riksha.name} className="riksha-img" />
+                <img
+                  src={riksha.image}
+                  alt={riksha.name}
+                  className="riksha-img"
+                />
                 <h4>{riksha.name}</h4>
                 <p>{riksha.desc}</p>
-                <button className="book-now-button" onClick={() => setSelected(riksha)}>Book</button>
+                <button
+                  className="book-now-button"
+                  onClick={() => setSelected(riksha)}
+                >
+                  Book
+                </button>
               </div>
             ))}
           </div>

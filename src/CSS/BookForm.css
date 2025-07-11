@@ -1,16 +1,16 @@
-/* Uses CSS variables for dark/light mode */
+/* BookForm.css - unified with Home page style */
 .booking-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   flex: 1;
   min-width: 260px;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
-  background: var(--primary-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 4px 16px rgba(0,0,0,0.08));
+  background: #fff;
+  color: #2e7d32;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   padding: 32px 24px;
 }
 
@@ -22,30 +22,28 @@
 
 .booking-type-group label {
   font-size: 16px;
-  color: var(--primary-fg);
+  color: #2e7d32;
 }
 
 .booking-form input {
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-  background: var(--card-bg);
-  color: var(--primary-fg);
+  background: #f8f9fa;
+  color: #2e7d32;
 }
 
 .booking-form input:focus {
-  border-color: #57966a;
+  border-color: #2e7d32;
 }
 
 .book-now-button {
-  background: var(--btn-bg);
-  color: var(--btn-fg);
+  background: #2e7d32;
+  color: #fff;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
@@ -53,18 +51,17 @@
 }
 
 .book-now-button:hover {
-  background: #417a52;
+  background: #1b5e20;
 }
 
 .selected-riksha {
   width: 320px;
-  text-align: center;
-  margin-bottom: 0;
-  background: var(--card-bg);
-  color: var(--primary-fg);
-  border-radius: var(--border-radius, 12px);
-  box-shadow: var(--shadow, 0 4px 16px rgba(0,0,0,0.08));
+  margin: 0 auto 18px auto;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(87,150,106,0.07);
   padding: 18px 16px 12px 16px;
+  text-align: center;
 }
 
 .selected-riksha .riksha-img {
@@ -83,7 +80,7 @@
   margin-top: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .bookform-flex {
     flex-direction: column;
     align-items: center;
@@ -102,17 +99,97 @@
   }
 }
 
-.back-btn {
-  background: none;
-  border: none;
-  color: var(--btn-bg);
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 16px;
-  text-decoration: underline;
-  transition: color 0.2s;
+@media (max-width: 600px) {
+  .booking-form {
+    padding: 18px 4vw;
+  }
+  .selected-riksha {
+    width: 98vw;
+    max-width: 340px;
+  }
 }
 
-.back-btn:hover {
-  color: #417a52;
+/* Removed old .bookform-flex and related media queries for clarity */
+
+.bookform-2col-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1100px;
+  width: 100%;
+  margin: 24px auto;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 4px 2px;
+}
+.bookform-left {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 180px;
+  max-width: 440px;
+  padding: 8px 2px 8px 2px;
+  background: #f8f9fa;
+}
+.riksha-image {
+  width: 96%;
+  max-width: 420px;
+  min-width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 4px;
+  box-shadow: 0 6px 24px rgba(87,150,106,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.riksha-image:hover {
+  box-shadow: 0 12px 32px rgba(87,150,106,0.28);
+  transform: scale(1.03);
+}
+.bookform-right {
+  flex: 2 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 2px 8px 2px;
+  background: #fff;
+}
+@media (max-width: 900px) {
+  .bookform-2col-container {
+    flex-direction: column;
+    max-width: 98vw;
+    padding: 0;
+  }
+  .bookform-left, .bookform-right {
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    padding: 24px 4vw;
+  }
+}
+html.dark .bookform-2col-container {
+  background: #23272b;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.32);
+}
+html.dark .bookform-left, html.dark .bookform-right {
+  background: #23272b;
+}
+html.dark .bookform-left h2, html.dark .bookform-right h2 {
+  color: #b6e3c6;
+}
+html.dark .riksha-desc {
+  color: #b6c7b9;
+}
+html.dark .btn.secondary {
+  background: #23272b;
+  color: #1abc9c;
+  border-color: #1abc9c;
+}
+html.dark .btn.secondary:hover {
+  background: #1a2a1a;
+  color: #7be6a2;
 }
