@@ -1,10 +1,9 @@
-/* Navbar.css - unified with Home page style */
 :root {
   --primary-bg: #fff;
   --primary-fg: #2e7d32;
   --card-bg: #f8f9fa;
   --border-radius: 12px;
-  --shadow: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
   --navbar-bg: rgba(255, 255, 255, 0.95);
   --navbar-fg: #2e7d32;
   --nav-link: #374151;
@@ -19,7 +18,7 @@ html.dark {
   --primary-bg: #23272b;
   --primary-fg: #b6e3c6;
   --card-bg: #23272b;
-  --shadow: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.32);
   --navbar-bg: rgba(35, 39, 43, 0.95);
   --navbar-fg: #b6e3c6;
   --nav-link: #b6e3c6;
@@ -30,7 +29,11 @@ html.dark {
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Navbar Container */
+html {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ================= NAVBAR ================== */
 .navbar {
   background: var(--navbar-bg);
   backdrop-filter: blur(20px);
@@ -44,16 +47,16 @@ html.dark {
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--shadow);
+  transition: background 0.3s ease;
 }
 
-/* Left Section */
+/* ================= LEFT SIDE =============== */
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 48px;
 }
 
-/* Logo */
 .logo {
   font-size: 24px;
   font-weight: 700;
@@ -61,13 +64,13 @@ html.dark {
   text-decoration: none;
   letter-spacing: -0.5px;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .logo:hover {
   color: var(--nav-link-hover);
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -87,14 +90,13 @@ html.dark {
   color: var(--nav-link-hover);
 }
 
-/* Right Section - Auth Buttons */
+/* ================= RIGHT SIDE =============== */
 .auth-buttons {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-/* Button Styles */
 .btn {
   background: var(--btn-bg);
   color: var(--btn-fg);
@@ -104,27 +106,20 @@ html.dark {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(87,150,106,0.07);
+  box-shadow: 0 2px 8px rgba(87, 150, 106, 0.07);
 }
 
-.btn:hover {
-  background: var(--btn-hover);
-}
 
-.login-btn {
-  background: transparent;
-  color: var(--btn-bg);
-  border: 2px solid var(--btn-bg);
-}
 
 .login-btn:hover {
-  background: var(--btn-bg);
+  background: var(--btn-hover);
   color: var(--btn-fg);
 }
 
-/* Theme Toggle Button */
+
+/* ============== THEME TOGGLE =============== */
 .theme-toggle-btn {
   background: #fff;
   color: #2e7d32;
@@ -134,7 +129,7 @@ html.dark {
   font-size: 18px;
   margin-left: 8px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
+  transition: all 0.2s ease;
 }
 
 .theme-toggle-btn:hover {
@@ -143,7 +138,7 @@ html.dark {
   border-color: #1b5e20;
 }
 
-/* Hamburger Menu */
+/* ============== HAMBURGER MENU =============== */
 .menu-toggle {
   display: none;
   background: none;
@@ -162,7 +157,7 @@ html.dark {
   transition: all 0.3s;
 }
 
-/* Mobile Menu */
+/* ============== MOBILE MENU =============== */
 .mobile-menu {
   position: absolute;
   top: 70px;
@@ -176,10 +171,11 @@ html.dark {
   gap: 18px;
   min-width: 180px;
   z-index: 2000;
-  animation: fadeInMenu 0.2s;
+  animation: slideInMenu 0.25s ease-out;
 }
 
-.mobile-menu a, .mobile-menu button {
+.mobile-menu a,
+.mobile-menu button {
   font-size: 16px;
   font-weight: 600;
   color: var(--primary-fg);
@@ -188,30 +184,54 @@ html.dark {
   text-align: left;
   padding: 8px 0;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.mobile-menu a:hover, .mobile-menu button:hover {
+.mobile-menu a:hover,
+.mobile-menu button:hover {
   background: #d4f4dd;
   color: #1b5e20;
 }
 
-/* Animations */
-@keyframes fadeInMenu {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ============ ANIMATIONS ============== */
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-/* Responsive Design */
+/* ========== MOBILE NOTIFICATION ========== */
+.mobile-notification-bell {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+/* ========== UTILITIES ========== */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .navbar {
     padding: 0 20px;
   }
-  
+
   .navbar-left {
     gap: 32px;
   }
-  
+
   .nav-links {
     gap: 24px;
   }
@@ -221,13 +241,21 @@ html.dark {
   .nav-links {
     display: none;
   }
-  
+
   .menu-toggle {
     display: flex;
   }
-  
+
   .auth-buttons .desktop-only {
     display: none;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block;
   }
 }
 
@@ -235,26 +263,26 @@ html.dark {
   .navbar {
     padding: 0 8px;
   }
-  
+
   .navbar-left {
     gap: 16px;
   }
-  
+
   .logo {
     font-size: 20px;
   }
-  
+
   .mobile-menu {
     right: 2vw;
     min-width: 120px;
     padding: 14px 8px 10px 8px;
   }
-  
+
   .menu-toggle {
     width: 40px;
     height: 40px;
   }
-  
+
   .menu-toggle .bar {
     width: 20px;
   }
@@ -264,42 +292,14 @@ html.dark {
   .navbar {
     padding: 0 12px;
   }
-  
+
   .logo {
     font-size: 18px;
   }
-  
+
   .mobile-menu {
     right: 12px;
     left: 12px;
     width: calc(100vw - 24px);
-  }
-}
-
-/* Mobile Notification Bell */
-.mobile-notification-bell {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 8px;
-}
-
-/* Utility Classes */
-.desktop-only {
-  display: block;
-}
-
-.mobile-only {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  .desktop-only {
-    display: none !important;
-  }
-  
-  .mobile-only {
-    display: block;
   }
 }

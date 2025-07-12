@@ -85,25 +85,18 @@ function Login() {
     setIsLoading(true);
     
     try {
+      // Use localStorage (only)
       const users = JSON.parse(localStorage.getItem('users') || '[]');
-      console.log('🔍 Available users:', users.map(u => ({ email: u.email, role: u.role })));
-      
       const user = users.find(u => u.email === email && u.password === password);
       
       if (user) {
-        console.log('🔐 Login successful for user:', user);
-        console.log('🔐 User role:', user.role);
-        console.log('🔐 User isAdmin:', user.isAdmin);
-        
         // Handle "Remember Me" functionality
         if (rememberMe) {
           localStorage.setItem('rememberedUser', JSON.stringify({ email: user.email }));
-          // Set a longer session duration (30 days)
           const sessionExpiry = new Date();
           sessionExpiry.setDate(sessionExpiry.getDate() + 30);
           localStorage.setItem('sessionExpiry', sessionExpiry.toISOString());
         } else {
-          // Clear remembered user if not checked
           localStorage.removeItem('rememberedUser');
           localStorage.removeItem('sessionExpiry');
         }
@@ -114,7 +107,7 @@ function Login() {
         
         // Set session expiry for current login
         const currentSessionExpiry = new Date();
-        currentSessionExpiry.setHours(currentSessionExpiry.getHours() + 24); // 24 hours
+        currentSessionExpiry.setHours(currentSessionExpiry.getHours() + 24);
         localStorage.setItem('currentSessionExpiry', currentSessionExpiry.toISOString());
         
         toast.success('Login successful! Welcome back!');
@@ -131,7 +124,7 @@ function Login() {
           setTimeout(() => navigate('/'), 1200);
         }
       } else {
-        console.log('❌ Login failed - invalid credentials');
+        console.log('❌ LocalStorage login failed - invalid credentials');
         toast.error('Invalid email or password.');
       }
     } catch (error) {
@@ -161,6 +154,7 @@ function Login() {
   return (
     <div className="auth-container">
       <h2>Login</h2>
+      
       <form className="auth-form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -199,53 +193,32 @@ function Login() {
           </button>
         </div>
 
-        <button type="submit" disabled={isLoading}>
+        <button 
+          type="submit" 
+          className="auth-button"
+          disabled={isLoading}
+        >
           {isLoading ? 'Logging in...' : 'Login'}
         </button>
-        <p className="switch-text">
-          Don't have an account? <Link to="/signup">Signup</Link>
+      </form>
+
+      <div className="auth-footer">
+        <p>
+          Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
         
-        {/* Temporary admin setup button for testing */}
-        <button 
-          type="button" 
-          onClick={handleSetupAdmin}
-          style={{
-            marginTop: '10px',
-            padding: '8px 16px',
-            backgroundColor: '#ff6b6b',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '12px'
-          }}
-        >
-          🔧 Setup Admin User
-        </button>
-        
-        {/* Debug button to show current users */}
-        <button 
-          type="button" 
-          onClick={() => {
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
-            console.log('🔍 Current users in localStorage:', users);
-            alert(`Current users: ${users.length}\n${users.map(u => `${u.email} (${u.role})`).join('\n')}`);
-          }}
-          style={{
-            marginTop: '5px',
-            padding: '8px 16px',
-            backgroundColor: '#4ecdc4',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '12px'
-          }}
-        >
-          🔍 Debug Users
-        </button>
-      </form>
+        {/* Development Tools */}
+        <div className="dev-tools">
+          <button 
+            type="button" 
+            className="dev-button"
+            onClick={handleSetupAdmin}
+            disabled={isLoading}
+          >
+            Setup Admin User
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -28,6 +28,8 @@ import AdminBookings from './pages/AdminBookings';
 import AdminPayments from './pages/AdminPayments';
 import AdminSettings from './pages/AdminSettings';
 import './App.css';
+import RideHome from './Ride/app/page';
+import Navbarx from './Ride/components/Navbarx';
 
 function App() {
   useEffect(() => {
@@ -73,10 +75,10 @@ function App() {
             <Route path="/book" element={<Book />} />
             <Route path="/bookForm" element={<BookForm />} />
             <Route path="/rickshaws" element={<Riksha />} />
-            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} />
             <Route path="/vehicle-management" element={<VehicleManagementPage />} />
             <Route path="/driver-management" element={<DriverManagementPage />} />
-            <Route path="/admin" element={<AdminDashboardPage />} />
+            <Route path="/admin" element={<AdminDashboardPage />} /> */}
           </Route>
 
           {/* Admin Panel Routes */}
@@ -90,7 +92,12 @@ function App() {
             <Route path="/admin/payments" element={<AdminPayments />} />
             <Route path="/admin/settings" element={<AdminSettings />} />
           </Route>
+          {/* RideX Panel Routes */}
+          <Route element={<Navbarx />}>
+            <Route path="/ride" element={<RideHome />} />
+          </Route>
 
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -98,5 +105,5 @@ function App() {
   );
 }
 
-// App.jsx
+
 export default App;
