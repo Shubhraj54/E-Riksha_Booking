@@ -1,5 +1,5 @@
 import React from 'react';
-import VehicleManagement from '../components/VehicleManagement';
+import VehicleManagement from '../Admin/components/VehicleManagement';
 import '../CSS/VehicleManagementPage.css';
 
 const VehicleManagementPage = () => {

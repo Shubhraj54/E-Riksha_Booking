@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTachometerAlt, FaEye, FaEyeSlash, FaUser, FaLock } from 'react-icons/fa';
-import { setupAdminUser } from '../utils/adminSetup';
+import { setupAdminUser } from '../../utils/adminSetup';
 import toast from 'react-hot-toast';
 import '../CSS/AdminLogin.css';
 

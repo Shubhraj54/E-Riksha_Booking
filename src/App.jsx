@@ -14,23 +14,25 @@ import Book from './pages/Booking';
 import Riksha from './pages/Riksha';
 import Profile from './pages/Profile';
 import VehicleManagementPage from './pages/VehicleManagementPage';
-import AdminDashboardPage from './pages/AdminDashboardPage';
-import DriverManagementPage from './pages/DriverManagementPage';
+import AdminDashboardPage from './Admin/components/AdminDashboardPage';
+import DriverManagementPage from './Admin/components/DriverManagementPage';
 import MainLayout from './components/MainLayout';
 import BookForm from './pages/BookForm';
 import NotFound from './pages/NotFound';
 // Admin Panel Components
-import AdminLayout from './components/AdminLayout';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
-import AdminUsers from './pages/AdminUsers';
-import AdminBookings from './pages/AdminBookings';
-import AdminPayments from './pages/AdminPayments';
-import AdminSettings from './pages/AdminSettings';
-import './App.css';
+import AdminLayout from './Admin/components/AdminLayout';
+import AdminLogin from './Admin/components/AdminLogin';
+import AdminDashboard from './Admin/components/AdminDashboard';
+import AdminUsers from './Admin/components/AdminUsers';
+import AdminBookings from './Admin/components/AdminBookings';
+import AdminPayments from './Admin/components/AdminPayments';
+import AdminSettings from './Admin/components/AdminSettings';
+
 import RideHome from './Ride/app/page';
 import Navbarx from './Ride/components/Navbarx';
 
+import './Ride/app/ride_globals.css';
+import './App.css';
 function App() {
   useEffect(() => {
     // Initialize sample data for testing

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaPhone, FaEnvelope, FaIdCard, FaStar, FaCar, FaMoneyBillWave, FaCalendarAlt, FaMapMarkerAlt, FaClock, FaChartLine, FaTrophy, FaEdit, FaCheck, FaTimes, FaDownload } from 'react-icons/fa';
-import driverService from '../services/driverService';
-import vehicleService from '../services/vehicleService';
+import driverService from '../../services/driverService';
+import vehicleService from '../../services/vehicleService';
 import toast from 'react-hot-toast';
-import '../CSS/DriverDashboard.css';
+import '../../CSS/DriverDashboard.css';
 
 const DriverDashboard = ({ driverId }) => {
   const [driver, setDriver] = useState(null);

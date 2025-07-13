@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUsers, FaSearch, FaEdit, FaTrash, FaEye, FaUserPlus, FaDownload, FaFilter } from 'react-icons/fa';
-import adminService from '../services/adminService';
+import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 import '../CSS/AdminUsers.css';
 

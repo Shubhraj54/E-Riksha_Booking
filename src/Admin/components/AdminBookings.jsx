@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaSearch, FaEdit, FaTrash, FaEye, FaDownload, FaFilter, FaCheck, FaTimes } from 'react-icons/fa';
-import bookingService from '../services/bookingService';
+import bookingService from '../../services/bookingService';
 import toast from 'react-hot-toast';
 import '../CSS/AdminBookings.css';
 

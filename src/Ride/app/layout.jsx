@@ -1,5 +1,4 @@
-import './globals.css'
-import Navbar from '../components/Navbar'
+import './ride_globals.css'
 
 export const metadata = {
   title: 'Rapido - India\'s #1 Bike Taxi Service',
@@ -10,7 +9,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
         {children}
       </body>
     </html>

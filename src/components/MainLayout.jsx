@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import NotificationCenter from './NotificationCenter';
 import { Outlet } from 'react-router-dom';
 

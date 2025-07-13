@@ -2,18 +2,18 @@
 
 const HeroSection = () => {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="ride_hero">
       {/* Background Elements */}
-      <div className="hero-bg"></div>
-      <div className="hero-bg-2"></div>
+      <div className="ride_hero-bg"></div>
+      <div className="ride_hero-bg-2"></div>
 
-      <div className="hero-content">
+      <div className="ride_hero-content">
         {/* Left Content */}
-        <div className="hero-text">
+        <div className="ride_hero-text">
           <h1>
             <span>India's #1</span>
             <br />
-            <span className="gradient-text">Bike Taxi</span>
+            <span className="ride_gradient-text">Bike Taxi</span>
             <br />
             <span>Service</span>
           </h1>
@@ -24,100 +24,100 @@ const HeroSection = () => {
           </p>
 
           {/* Stats */}
-          <div className="hero-stats">
-            <div className="stat-item">
+          <div className="ride_hero-stats">
+            <div className="ride_stat-item">
               <span>👥</span>
               <span>10M+ Users</span>
             </div>
-            <div className="stat-item">
+            <div className="ride_stat-item">
               <span>📍</span>
               <span>100+ Cities</span>
             </div>
-            <div className="stat-item">
+            <div className="ride_stat-item">
               <span>⭐</span>
               <span>4.5★ Rating</span>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="hero-buttons">
-            <button className="btn btn-primary btn-lg">
+          <div className="ride_hero-buttons">
+            <button className="ride_btn ride_btn-primary ride_btn-lg">
               <span>📱</span>
               <span>Download App</span>
               <span>→</span>
             </button>
-            <button className="btn btn-outline btn-lg">
+            <button className="ride_btn ride_btn-outline ride_btn-lg">
               <span>📞</span>
               <span>Book Now</span>
             </button>
           </div>
 
           {/* Trust Indicators */}
-          <div className="trust-indicators">
-            <div className="trust-item">
-              <div className="trust-dot green"></div>
+          <div className="ride_trust-indicators">
+            <div className="ride_trust-item">
+              <div className="ride_trust-dot green"></div>
               <span>100% Safe</span>
             </div>
-            <div className="trust-item">
-              <div className="trust-dot blue"></div>
+            <div className="ride_trust-item">
+              <div className="ride_trust-dot blue"></div>
               <span>24/7 Support</span>
             </div>
-            <div className="trust-item">
-              <div className="trust-dot purple"></div>
+            <div className="ride_trust-item">
+              <div className="ride_trust-dot purple"></div>
               <span>Instant Booking</span>
             </div>
           </div>
         </div>
 
         {/* Right Content - Hero Image */}
-        <div className="hero-image">
-          <div className="phone-mockup">
-            <div className="phone-screen">
-              <div className="app-header">
-                <div className="app-logo">R</div>
-                <div className="app-title">Rapido</div>
+        <div className="ride_hero-image">
+          <div className="ride_phone-mockup">
+            <div className="ride_phone-screen">
+              <div className="ride_app-header">
+                <div className="ride_app-logo">R</div>
+                <div className="ride_app-title">Rapido</div>
               </div>
-              <div className="app-content">
-                <div className="location-input">
-                  <div className="location-dot pickup"></div>
+              <div className="ride_app-content">
+                <div className="ride_location-input">
+                  <div className="ride_location-dot pickup"></div>
                   <input type="text" placeholder="Pickup location" disabled />
                 </div>
-                <div className="location-input">
-                  <div className="location-dot drop"></div>
+                <div className="ride_location-input">
+                  <div className="ride_location-dot drop"></div>
                   <input type="text" placeholder="Drop location" disabled />
                 </div>
-                <div className="service-options">
-                  <div className="service-option">
-                    <div className="service-icon bike">🚗</div>
-                    <div className="service-name">Bike</div>
-                    <div className="service-price">₹25</div>
+                <div className="ride_service-options">
+                  <div className="ride_service-option">
+                    <div className="ride_service-icon bike">🚗</div>
+                    <div className="ride_service-name">Bike</div>
+                    <div className="ride_service-price">₹25</div>
                   </div>
-                  <div className="service-option">
-                    <div className="service-icon auto">🚙</div>
-                    <div className="service-name">Auto</div>
-                    <div className="service-price">₹40</div>
+                  <div className="ride_service-option">
+                    <div className="ride_service-icon auto">🚙</div>
+                    <div className="ride_service-name">Auto</div>
+                    <div className="ride_service-price">₹40</div>
                   </div>
-                  <div className="service-option">
-                    <div className="service-icon delivery">📦</div>
-                    <div className="service-name">Delivery</div>
-                    <div className="service-price">₹30</div>
+                  <div className="ride_service-option">
+                    <div className="ride_service-icon delivery">📦</div>
+                    <div className="ride_service-name">Delivery</div>
+                    <div className="ride_service-price">₹30</div>
                   </div>
                 </div>
-                <button className="book-button">Book Now</button>
+                <button className="ride_book-button">Book Now</button>
               </div>
             </div>
           </div>
 
           {/* Floating Elements */}
-          <div className="floating-element success">✅</div>
-          <div className="floating-element speed">⚡</div>
-          <div className="floating-element fire">🔥</div>
+          <div className="ride_floating-element success">✅</div>
+          <div className="ride_floating-element speed">⚡</div>
+          <div className="ride_floating-element fire">🔥</div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <div className="scroll-dot"></div>
+      <div className="ride_scroll-indicator">
+        <div className="ride_scroll-dot"></div>
       </div>
     </section>
   )

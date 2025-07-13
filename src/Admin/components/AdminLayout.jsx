@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { FaTachometerAlt, FaUsers, FaCar, FaUserTie, FaCalendarAlt, FaCreditCard, FaCog, FaSignOutAlt, FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
-import { getCurrentUser, clearSession } from '../utils/sessionManager';
+import { getCurrentUser, clearSession } from '../../utils/sessionManager';
 import toast from 'react-hot-toast';
 import '../CSS/AdminLayout.css';
 

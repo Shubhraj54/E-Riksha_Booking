@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AdminDashboard from '../components/AdminDashboard';
+import AdminDashboard from './AdminDashboard';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import '../CSS/AdminDashboardPage.css';

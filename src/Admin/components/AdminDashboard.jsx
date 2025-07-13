@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import adminService from '../services/adminService';
-import vehicleService from '../services/vehicleService';
+import adminService from '../../services/adminService';
+import vehicleService from '../../services/vehicleService';
 import toast from 'react-hot-toast';
 import { format } from 'date-fns';
 import '../CSS/AdminDashboard.css';
@@ -22,12 +22,12 @@ const AdminDashboard = () => {
   const loadDashboardData = () => {
     setLoading(true);
     try {
-      const analyticsData = adminService.getBusinessAnalytics();
-      const allUsers = adminService.getAllUsers();
-      const allBookings = adminService.getAllBookings();
-      const allPayments = adminService.getAllPayments();
+      const analyticsData = adminService.getDashboardStats();
+      const allUsers = adminService.getUsers();
+      const allBookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+      const allPayments = JSON.parse(localStorage.getItem('payments') || '[]');
       const allVehicles = vehicleService.getAllVehicles();
-      const adminNotifications = adminService.getAdminNotifications();
+      const adminNotifications = adminService.getSystemAlerts();
 
       setAnalytics(analyticsData);
       setUsers(allUsers);
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
 
   const handleUserStatusChange = async (userId, newStatus) => {
     try {
-      adminService.updateUser(userId, { status: newStatus });
+      adminService.updateUserStatus(userId, newStatus);
       loadDashboardData();
       toast.success('User status updated successfully');
     } catch (error) {
@@ -85,15 +85,21 @@ const AdminDashboard = () => {
 
   const handleBookingStatusChange = async (bookingId, newStatus) => {
     try {
-      if (newStatus === 'cancelled') {
-        adminService.cancelBooking(bookingId, 'Admin cancellation');
-      } else if (newStatus === 'completed') {
-        adminService.completeBooking(bookingId);
+      // Update booking status in localStorage
+      const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+      const bookingIndex = bookings.findIndex(b => b.id === bookingId);
+      
+      if (bookingIndex !== -1) {
+        bookings[bookingIndex].status = newStatus;
+        if (newStatus === 'cancelled') {
+          bookings[bookingIndex].cancellationReason = 'Admin cancellation';
+        }
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+        loadDashboardData();
+        toast.success('Booking status updated successfully');
       } else {
-        adminService.updateBooking(bookingId, { status: newStatus });
+        toast.error('Booking not found');
       }
-      loadDashboardData();
-      toast.success('Booking status updated successfully');
     } catch (error) {
       toast.error('Failed to update booking status');
     }
@@ -101,7 +107,16 @@ const AdminDashboard = () => {
 
   const exportData = () => {
     try {
-      const data = adminService.exportAllData();
+      const data = {
+        users: JSON.parse(localStorage.getItem('users') || '[]'),
+        vehicles: JSON.parse(localStorage.getItem('vehicles') || '[]'),
+        bookings: JSON.parse(localStorage.getItem('bookings') || '[]'),
+        payments: JSON.parse(localStorage.getItem('payments') || '[]'),
+        drivers: JSON.parse(localStorage.getItem('drivers') || '[]'),
+        analytics: adminService.getDashboardStats(),
+        exportDate: new Date().toISOString()
+      };
+      
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -128,64 +143,75 @@ const AdminDashboard = () => {
   return (
     <div className="admin-dashboard">
       {/* Header */}
-      <div className="admin-header">
-        <h1>Admin Dashboard</h1>
-        <div className="admin-actions">
-          <button className="action-btn export" onClick={exportData}>
+      <div className="dashboard-header">
+        <div className="header-content">
+          <h1>Admin Dashboard</h1>
+          <p>Manage your e-riksha rental business</p>
+        </div>
+        <div className="header-actions">
+          <button className="btn btn-secondary" onClick={exportData}>
             📊 Export Data
           </button>
-          <button className="action-btn refresh" onClick={loadDashboardData}>
+          <button className="btn btn-secondary" onClick={loadDashboardData}>
             🔄 Refresh
           </button>
         </div>
       </div>
 
-      {/* Notifications */}
+      {/* Alerts Section */}
       {notifications.length > 0 && (
-        <div className="admin-notifications">
-          {notifications.map((notification, index) => (
-            <div key={index} className={`notification-item ${notification.type}`}>
-              <span className="notification-icon">
-                {notification.type === 'error' ? '🚨' : 
-                 notification.type === 'warning' ? '⚠️' : 'ℹ️'}
-              </span>
-              <div className="notification-content">
-                <h4>{notification.title}</h4>
-                <p>{notification.message}</p>
+        <div className="alerts-section">
+          <h3>🚨 System Alerts</h3>
+          <div className="alerts-grid">
+            {notifications.map((notification, index) => (
+              <div key={index} className={`alert-card ${notification.type}`}>
+                <span className="alert-icon">
+                  {notification.type === 'error' ? '🚨' : 
+                   notification.type === 'warning' ? '⚠️' : 'ℹ️'}
+                </span>
+                <div className="alert-content">
+                  <h4>{notification.title}</h4>
+                  <p>{notification.message}</p>
+                  <span className="alert-time">{notification.time}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Quick Stats */}
-      <div className="quick-stats">
+      {/* Stats Grid */}
+      <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-icon">💰</div>
+          <div className="stat-icon revenue">💰</div>
           <div className="stat-content">
-            <h3>₹{analytics.revenue?.total?.toLocaleString()}</h3>
+            <h3>₹{analytics.totalRevenue?.toLocaleString() || '0'}</h3>
             <p>Total Revenue</p>
+            <span className="stat-change positive">+{analytics.revenueThisMonth || 0} this month</span>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-icon">📋</div>
+          <div className="stat-icon bookings">📋</div>
           <div className="stat-content">
-            <h3>{analytics.bookings?.total}</h3>
+            <h3>{analytics.totalBookings || 0}</h3>
             <p>Total Bookings</p>
+            <span className="stat-change positive">+{analytics.bookingsThisMonth || 0} this month</span>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-icon">👥</div>
+          <div className="stat-icon users">👥</div>
           <div className="stat-content">
-            <h3>{analytics.users?.total}</h3>
+            <h3>{analytics.totalUsers || 0}</h3>
             <p>Total Users</p>
+            <span className="stat-change positive">+{analytics.newUsersThisMonth || 0} this month</span>
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-icon">🚗</div>
+          <div className="stat-icon vehicles">🚗</div>
           <div className="stat-content">
-            <h3>{analytics.vehicles?.total}</h3>
+            <h3>{analytics.totalVehicles || 0}</h3>
             <p>Total Vehicles</p>
+            <span className="stat-change positive">{analytics.availableVehicles || 0} available</span>
           </div>
         </div>
       </div>
@@ -234,41 +260,41 @@ const AdminDashboard = () => {
                 <h3>Revenue Analytics</h3>
                 <div className="metric">
                   <span>Total Revenue:</span>
-                  <span>₹{analytics.revenue?.total?.toLocaleString()}</span>
+                  <span>₹{analytics.totalRevenue?.toLocaleString() || '0'}</span>
                 </div>
                 <div className="metric">
-                  <span>Average Booking:</span>
-                  <span>₹{analytics.revenue?.average?.toFixed(2)}</span>
+                  <span>Monthly Revenue:</span>
+                  <span>₹{analytics.revenueThisMonth?.toLocaleString() || '0'}</span>
                 </div>
                 <div className="metric">
-                  <span>Success Rate:</span>
-                  <span>{analytics.bookings?.successRate?.toFixed(1)}%</span>
+                  <span>Growth Rate:</span>
+                  <span>{analytics.growthRate || 0}%</span>
                 </div>
               </div>
 
               <div className="overview-card">
                 <h3>Vehicle Performance</h3>
                 <div className="metric">
-                  <span>Utilization Rate:</span>
-                  <span>{analytics.vehicles?.utilizationRate?.toFixed(1)}%</span>
+                  <span>Total Vehicles:</span>
+                  <span>{analytics.totalVehicles || 0}</span>
                 </div>
                 <div className="metric">
                   <span>Available:</span>
-                  <span>{analytics.vehicles?.available}</span>
+                  <span>{analytics.availableVehicles || 0}</span>
                 </div>
                 <div className="metric">
-                  <span>Rented:</span>
-                  <span>{analytics.vehicles?.rented}</span>
+                  <span>Active Drivers:</span>
+                  <span>{analytics.activeDrivers || 0}</span>
                 </div>
               </div>
 
               <div className="overview-card">
                 <h3>Recent Activity</h3>
                 <div className="recent-activity">
-                  {analytics.activity?.recentBookings?.slice(0, 3).map(booking => (
+                  {bookings.slice(0, 3).map(booking => (
                     <div key={booking.id} className="activity-item">
                       <span>📋 Booking #{booking.id}</span>
-                      <span className="activity-status">{booking.status}</span>
+                      <span className={`activity-status ${booking.status}`}>{booking.status}</span>
                     </div>
                   ))}
                 </div>
@@ -277,10 +303,10 @@ const AdminDashboard = () => {
               <div className="overview-card">
                 <h3>Top Performing Vehicles</h3>
                 <div className="top-vehicles">
-                  {analytics.vehicles?.topPerformers?.slice(0, 3).map(vehicle => (
+                  {vehicles.slice(0, 3).map(vehicle => (
                     <div key={vehicle.id} className="vehicle-item">
                       <span>{vehicle.name}</span>
-                      <span>₹{vehicle.totalEarnings?.toLocaleString()}</span>
+                      <span>₹{vehicle.totalEarnings?.toLocaleString() || '0'}</span>
                     </div>
                   ))}
                 </div>

@@ -6,10 +6,10 @@ import DownloadSection from '../components/DownloadSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
 import Navbarx from '../components/Navbarx'
-import './globals.css';
+
 export default function RideHome() {
   return (
-    <main>
+    <main className="ride_main">
       <Navbarx />
       <HeroSection />
       <ServicesSection />

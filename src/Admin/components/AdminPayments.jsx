@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaCreditCard, FaSearch, FaEdit, FaTrash, FaEye, FaDownload, FaFilter, FaCheck, FaTimes, FaMoneyBillWave } from 'react-icons/fa';
-import paymentService from '../services/paymentService';
+import paymentService from '../../services/paymentService';
 import toast from 'react-hot-toast';
 import '../CSS/AdminPayments.css';
 

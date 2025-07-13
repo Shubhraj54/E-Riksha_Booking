@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import vehicleService from '../services/vehicleService';
+import vehicleService from '../../services/vehicleService';
 import toast from 'react-hot-toast';
 import { format } from 'date-fns';
-import '../CSS/VehicleManagement.css';
+import '../../CSS/VehicleManagement.css';
 
 const VehicleManagement = () => {
   const [vehicles, setVehicles] = useState([]);

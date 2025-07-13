@@ -82,6 +82,7 @@ function Navbar() {
     const classSuffix = isMobile ? 'mobile-only' : 'desktop-only';
     return !authUser ? (
       <>
+        <Link to="/ride" className={`btn  ${classSuffix}`} onClick={() => setMenuOpen(false)}>Book Ride</Link>
         <Link to="/login" className={`btn  ${classSuffix}`} onClick={() => setMenuOpen(false)}>Login</Link>
         <Link to="/signup" className={`btn signup-btn ${classSuffix}`} onClick={() => setMenuOpen(false)}>Signup</Link>
       </>

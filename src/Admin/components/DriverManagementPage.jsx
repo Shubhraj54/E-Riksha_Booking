@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DriverManagement from '../components/DriverManagement';
-import '../CSS/DriverManagement.css';
+import DriverManagement from './DriverManagement';
+import '../../CSS/DriverManagement.css';
 
 const DriverManagementPage = () => {
   const navigate = useNavigate();

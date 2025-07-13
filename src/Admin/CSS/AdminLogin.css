@@ -250,11 +250,11 @@
 
 .credential-item code {
   background: #f3f4f6;
-  color: #1f2937;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  color: #374151;
   font-weight: 600;
 }
 
@@ -297,13 +297,14 @@
   }
   
   .credential-item code {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
   }
 }
 
-/* Loading Animation */
+/* Loading State */
 .login-btn:disabled {
   position: relative;
+  overflow: hidden;
 }
 
 .login-btn:disabled::after {
@@ -311,9 +312,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
+  margin: -10px 0 0 -10px;
   border: 2px solid transparent;
   border-top: 2px solid white;
   border-radius: 50%;
@@ -321,23 +322,19 @@
 }
 
 @keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Focus States for Accessibility */
+/* Focus States */
 .form-group input:focus,
-.password-toggle:focus,
-.login-btn:focus,
-.setup-admin-btn:focus,
-.back-to-site-btn:focus {
+.password-toggle:focus {
   outline: 2px solid #667eea;
   outline-offset: 2px;
 }
 
 /* Hover Effects */
 .admin-login-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
 } 
