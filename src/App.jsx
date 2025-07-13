@@ -76,10 +76,10 @@ function App() {
             <Route path="/book" element={<Book />} />
             <Route path="/bookForm" element={<BookForm />} />
             <Route path="/rickshaws" element={<Riksha />} />
-            {/* <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/vehicle-management" element={<VehicleManagementPage />} />
             <Route path="/driver-management" element={<DriverManagementPage />} />
-            <Route path="/admin" element={<AdminDashboardPage />} /> */}
+            <Route path="/admin" element={<AdminDashboardPage />} />
           </Route>
 
           {/* Admin Panel Routes */}

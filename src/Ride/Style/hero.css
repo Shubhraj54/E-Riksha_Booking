@@ -9,26 +9,13 @@
   padding-top: 70px;
 }
 
-/* Background Elements */
+/* Background Elements - Removed to show main background */
 .ride_hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
-  z-index: -2;
+  display: none;
 }
 
 .ride_hero-bg-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
-  z-index: -1;
+  display: none;
 }
 
 /* Hero Content */

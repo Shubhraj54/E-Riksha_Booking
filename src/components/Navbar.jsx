@@ -3,6 +3,7 @@ import './Navbar.css';
 import React, { useState, useEffect, useMemo } from 'react';
 import { getCurrentUser, clearSession, setupSessionMonitoring } from '../utils/sessionManager';
 import NotificationBell from './NotificationBell';
+import ProfileAvatar from './ProfileAvatar';
 import toast from 'react-hot-toast';
 
 function Navbar() {
@@ -92,8 +93,12 @@ function Navbar() {
           <div className="mobile-notification-bell"><NotificationBell /></div>
         )}
         {!isMobile && <NotificationBell />}
-        <Link to="/profile" className={`btn profile-btn ${classSuffix}`} onClick={() => setMenuOpen(false)}>Profile</Link>
-        <button className={`btn logout-btn ${classSuffix}`} onClick={handleLogout}>Logout</button>
+        <ProfileAvatar 
+          user={authUser} 
+          onClick={() => setMenuOpen(false)}
+          onLogout={handleLogout}
+          className={classSuffix}
+        />
       </>
     );
   };
