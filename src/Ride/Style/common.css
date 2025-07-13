@@ -1,0 +1,305 @@
+/* Common CSS - Global styles, reset, and shared utilities */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styles - Matching App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to right, #95d996, #82ba92, #6ea68d, #5a917f, #4d7c72);
+  color: var(--primary-fg, #2e7d32);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dark Mode Support */
+html.dark body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: rgba(24,28,31,0.85); /* dark overlay */
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Base Elements */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10B981;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient Text Utility */
+.ride_gradient-text {
+  background: linear-gradient(135deg, #10B981, #059669, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Common Button Styles */
+.ride_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.ride_btn-primary {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+.ride_btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.ride_btn-outline {
+  background: white;
+  color: #10B981;
+  border: 2px solid #10B981;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ride_btn-outline:hover {
+  background: #10B981;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.ride_btn-lg {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+/* Common Section Styles */
+.ride_section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.ride_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ride_section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ride_section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1F2937;
+}
+
+.ride_section-subtitle {
+  font-size: 1.125rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Common Grid Layouts */
+.ride_grid {
+  display: grid;
+  gap: 24px;
+}
+
+.ride_grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.ride_grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.ride_grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Responsive Utilities */
+@media (min-width: 768px) {
+  .ride_grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ride_grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .ride_grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ride_section {
+    padding: 100px 0;
+  }
+  
+  .ride_section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Common Animation Keyframes */
+@keyframes ride_float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.ride_animate-float {
+  animation: ride_float 3s ease-in-out infinite;
+}
+
+@keyframes ride_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ride_animate-fadeIn {
+  animation: ride_fadeIn 0.6s ease-out;
+}
+
+/* Common Card Styles */
+.ride_card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.ride_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Common Icon Background Styles */
+.ride_icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ride_icon-bg-blue {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.ride_icon-bg-green {
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.ride_icon-bg-purple {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+}
+
+/* Common Status Indicators */
+.ride_status-green {
+  color: #10B981;
+}
+
+.ride_status-blue {
+  color: #3B82F6;
+}
+
+.ride_status-purple {
+  color: #8B5CF6;
+}
+
+/* Common Dot Indicators */
+.ride_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.ride_dot-blue {
+  background: #3B82F6;
+}
+
+.ride_dot-green {
+  background: #10B981;
+}
+
+.ride_dot-purple {
+  background: #8B5CF6;
+} 

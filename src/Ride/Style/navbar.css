@@ -1,0 +1,284 @@
+/* Navbar CSS - Navigation bar styles for the Ride app */
+
+.ride_navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.ride_navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Logo */
+.ride_navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.ride_navbar-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10B981;
+  text-decoration: none;
+}
+
+/* Desktop Menu */
+.ride_navbar-menu {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .ride_navbar-menu {
+    display: flex;
+  }
+}
+
+.ride_navbar-menu-item {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+.ride_navbar-menu-link {
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.ride_navbar-menu-link:hover {
+  color: #10B981;
+}
+
+/* Active state for navigation items */
+.ride_navbar-menu-item.active .ride_navbar-menu-link {
+  color: #10B981;
+  font-weight: 600;
+}
+
+.ride_navbar-menu-item.active {
+  position: relative;
+}
+
+.ride_navbar-menu-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  border-radius: 1px;
+}
+
+/* CTA Buttons */
+.ride_navbar-cta {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .ride_navbar-cta {
+    display: flex;
+  }
+}
+
+.ride_navbar-cta-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ride_navbar-cta-secondary {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+}
+
+.ride_navbar-cta-secondary:hover {
+  background: #F3F4F6;
+  border-color: #9CA3AF;
+}
+
+.ride_navbar-cta-primary {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+.ride_navbar-cta-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.ride_navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.ride_navbar-mobile-toggle:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+@media (min-width: 768px) {
+  .ride_navbar-mobile-toggle {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.ride_navbar-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ride_navbar-mobile-item {
+  color: #374151;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid #F3F4F6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.ride_navbar-mobile-item:hover {
+  color: #10B981;
+}
+
+/* Active state for mobile navigation items */
+.ride_navbar-mobile-item.active {
+  color: #10B981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 0 -16px;
+}
+
+.ride_navbar-mobile-item:last-child {
+  border-bottom: none;
+}
+
+.ride_navbar-mobile-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.ride_navbar-mobile-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.ride_navbar-mobile-button-secondary {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+}
+
+.ride_navbar-mobile-button-secondary:hover {
+  background: #F3F4F6;
+}
+
+.ride_navbar-mobile-button-primary {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+.ride_navbar-mobile-button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Navbar Scrolled State */
+.ride_navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .ride_navbar-container {
+    padding: 0 16px;
+    height: 60px;
+  }
+  
+  .ride_navbar-logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .ride_navbar-mobile-menu {
+    padding: 16px;
+  }
+} 

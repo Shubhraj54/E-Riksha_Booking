@@ -1,6 +1,10 @@
 'use client'
 
-const Footer = () => {
+import '../Style/footer.css';
+import '../Style/icons.css';
+import { brandConfig } from '../config/brandConfig';
+
+const RideFooter = () => {
   return (
     <footer className="ride_footer">
       <div className="ride_footer-container">
@@ -8,7 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="ride_footer-section">
             <div className="ride_footer-logo">
-              <span className="ride_footer-logo-text">Rapido</span>
+              <span className="ride_footer-logo-text">{brandConfig.name}</span>
             </div>
             <p className="ride_footer-description">
               India's leading bike taxi platform, revolutionizing urban transportation 
@@ -75,15 +79,15 @@ const Footer = () => {
             <div className="ride_footer-contact-info">
               <div className="ride_footer-contact-item">
                 <div className="ride_icon-mail-small"></div>
-                <span>support@rapido.com</span>
+                <span>{brandConfig.email.support}</span>
               </div>
               <div className="ride_footer-contact-item">
                 <div className="ride_icon-phone-small"></div>
-                <span>+91 1800-123-4567</span>
+                <span>{brandConfig.phone}</span>
               </div>
               <div className="ride_footer-contact-item">
                 <div className="ride_icon-map-pin-small"></div>
-                <span>Bangalore, Karnataka, India</span>
+                <span>{brandConfig.address.split(',').slice(1).join(',').trim()}</span>
               </div>
             </div>
           </div>
@@ -93,7 +97,7 @@ const Footer = () => {
         <div className="ride_footer-bottom">
           <div className="ride_footer-bottom-content">
             <div className="ride_footer-copyright">
-              <p>&copy; 2024 Rapido. All rights reserved.</p>
+              <p>{brandConfig.copyright}</p>
             </div>
             <div className="ride_footer-bottom-links">
               <a href="#privacy" className="ride_footer-bottom-link">Privacy Policy</a>
@@ -108,4 +112,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default RideFooter 

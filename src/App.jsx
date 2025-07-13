@@ -27,11 +27,10 @@ import AdminUsers from './Admin/components/AdminUsers';
 import AdminBookings from './Admin/components/AdminBookings';
 import AdminPayments from './Admin/components/AdminPayments';
 import AdminSettings from './Admin/components/AdminSettings';
-
+// RideX Components
 import RideHome from './Ride/app/page';
-import Navbarx from './Ride/components/Navbarx';
+import './Ride/Style/common.css';
 
-import './Ride/app/ride_globals.css';
 import './App.css';
 function App() {
   useEffect(() => {
@@ -95,9 +94,7 @@ function App() {
             <Route path="/admin/settings" element={<AdminSettings />} />
           </Route>
           {/* RideX Panel Routes */}
-          <Route element={<Navbarx />}>
-            <Route path="/ride" element={<RideHome />} />
-          </Route>
+          <Route path="/ride" element={<RideHome />} />
 
           
           <Route path="*" element={<NotFound />} />

@@ -1,5 +1,9 @@
 'use client'
 
+import '../Style/about.css';
+import '../Style/icons.css';
+import { brandConfig } from '../config/brandConfig';
+
 const milestones = [
   {
     year: '2015',
@@ -51,14 +55,14 @@ const values = [
   }
 ]
 
-const AboutSection = () => {
+const RideAboutSection = () => {
   return (
     <section id="about" className="ride_about-section">
       <div className="ride_about-container">
         {/* Section Header */}
         <div className="ride_about-header">
           <h2 className="ride_about-title">
-            About <span className="ride_gradient-text">Rapido</span>
+            About <span className="ride_gradient-text">{brandConfig.name}</span>
           </h2>
           <p className="ride_about-subtitle">
             India's leading bike taxi platform, revolutionizing urban transportation 
@@ -220,4 +224,4 @@ const AboutSection = () => {
   )
 }
 
-export default AboutSection 
+export default RideAboutSection 

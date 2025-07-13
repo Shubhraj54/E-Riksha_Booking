@@ -1,23 +1,25 @@
-import HeroSection from '../components/HeroSection'
-import ServicesSection from '../components/ServicesSection'
-import SafetySection from '../components/SafetySection'
-import AboutSection from '../components/AboutSection'
-import DownloadSection from '../components/DownloadSection'
-import ContactSection from '../components/ContactSection'
-import Footer from '../components/Footer'
-import Navbarx from '../components/Navbarx'
+import '../Style/common.css';
+import { Outlet } from 'react-router-dom';
+import RideHeroSection from '../components/RideHeroSection'
+import RideServicesSection from '../components/RideServicesSection'
+import RideSafetySection from '../components/RideSafetySection'
+import RideAboutSection from '../components/RideAboutSection'
+import RideDownloadSection from '../components/RideDownloadSection'
+import RideContactSection from '../components/RideContactSection'
+import RideFooter from '../components/RideFooter'
+import RideNavbarx from '../components/RideNavbarx'
 
 export default function RideHome() {
   return (
     <main className="ride_main">
-      <Navbarx />
-      <HeroSection />
-      <ServicesSection />
-      <SafetySection />
-      <AboutSection />
-      <DownloadSection />
-      <ContactSection />
-      <Footer />
+      <RideNavbarx />
+      <RideHeroSection />
+      <RideServicesSection />
+      <RideSafetySection />
+      <RideAboutSection />
+      <RideDownloadSection />
+      <RideContactSection />
+      <RideFooter />
     </main>
   )
 } 

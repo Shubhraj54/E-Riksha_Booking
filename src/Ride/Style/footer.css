@@ -1,0 +1,192 @@
+/* Footer CSS - Footer styles for the Ride app */
+
+.ride_footer {
+  background: #1F2937;
+  color: white;
+  padding: 60px 0 0;
+}
+
+.ride_footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ride_footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .ride_footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ride_footer-content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Footer Section */
+.ride_footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Company Info */
+.ride_footer-logo {
+  margin-bottom: 16px;
+}
+
+.ride_footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.ride_footer-description {
+  color: #9CA3AF;
+  line-height: 1.6;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+/* Social Media */
+.ride_footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.ride_footer-social-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.ride_footer-social-button:hover {
+  background: #10B981;
+  transform: translateY(-2px);
+}
+
+/* Footer Section Titles */
+.ride_footer-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 16px;
+}
+
+/* Footer Links */
+.ride_footer-section-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ride_footer-section-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.ride_footer-section-link:hover {
+  color: #10B981;
+}
+
+/* Contact Info */
+.ride_footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ride_footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9CA3AF;
+  font-size: 0.875rem;
+}
+
+/* Footer Bottom */
+.ride_footer-bottom {
+  border-top: 1px solid #374151;
+  padding: 24px 0;
+}
+
+.ride_footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .ride_footer-bottom-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.ride_footer-copyright {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+}
+
+.ride_footer-bottom-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .ride_footer-bottom-links {
+    justify-content: flex-end;
+  }
+}
+
+.ride_footer-bottom-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.ride_footer-bottom-link:hover {
+  color: #10B981;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ride_footer {
+    padding: 40px 0 0;
+  }
+  
+  .ride_footer-content {
+    gap: 32px;
+  }
+  
+  .ride_footer-bottom-content {
+    text-align: center;
+  }
+  
+  .ride_footer-bottom-links {
+    gap: 16px;
+  }
+} 

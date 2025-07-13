@@ -1,0 +1,509 @@
+/* Icons CSS - All icon styles for the Ride app */
+
+/* Base Icon Styles */
+.ride_icon-target,
+.ride_icon-globe,
+.ride_icon-heart,
+.ride_icon-shield,
+.ride_icon-trending,
+.ride_icon-users,
+.ride_icon-award,
+.ride_icon-bike,
+.ride_icon-car,
+.ride_icon-package,
+.ride_icon-clock,
+.ride_icon-dollar,
+.ride_icon-map-pin,
+.ride_icon-user-check,
+.ride_icon-phone,
+.ride_icon-check-circle,
+.ride_icon-alert-triangle,
+.ride_icon-zap,
+.ride_icon-star,
+.ride_icon-smartphone,
+.ride_icon-download,
+.ride_icon-mail,
+.ride_icon-send,
+.ride_icon-map-pin-large,
+.ride_icon-facebook,
+.ride_icon-twitter,
+.ride_icon-instagram,
+.ride_icon-youtube,
+.ride_icon-linkedin,
+.ride_icon-mail-small,
+.ride_icon-phone-small,
+.ride_icon-map-pin-small,
+.ride_icon-menu,
+.ride_icon-close {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Target Icon */
+.ride_icon-target::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.ride_icon-target::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Globe Icon */
+.ride_icon-globe::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.ride_icon-globe::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+/* Heart Icon */
+.ride_icon-heart::before {
+  content: '♥';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Shield Icon */
+.ride_icon-shield::before {
+  content: '🛡';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Trending Icon */
+.ride_icon-trending::before {
+  content: '↗';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+/* Users Icon */
+.ride_icon-users::before {
+  content: '👥';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Award Icon */
+.ride_icon-award::before {
+  content: '🏆' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  color: inherit !important;
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif !important;
+}
+
+/* Bike Icon */
+.ride_icon-bike::before {
+  content: '🏍️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Car Icon */
+.ride_icon-car::before {
+  content: '🚗';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Package Icon */
+.ride_icon-package::before {
+  content: '📦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Clock Icon */
+.ride_icon-clock::before {
+  content: '⏰';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Dollar Icon */
+.ride_icon-dollar::before {
+  content: '💰';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Map Pin Icon */
+.ride_icon-map-pin::before {
+  content: '📍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* User Check Icon */
+.ride_icon-user-check::before {
+  content: '✅';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Phone Icon */
+.ride_icon-phone::before {
+  content: '📞';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Check Circle Icon */
+.ride_icon-check-circle::before {
+  content: '✅';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Alert Triangle Icon */
+.ride_icon-alert-triangle::before {
+  content: '⚠️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Zap Icon */
+.ride_icon-zap::before {
+  content: '⚡';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Star Icon */
+.ride_icon-star::before {
+  content: '⭐';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Smartphone Icon */
+.ride_icon-smartphone::before {
+  content: '📱';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Download Icon */
+.ride_icon-download::before {
+  content: '⬇️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Mail Icon */
+.ride_icon-mail::before {
+  content: '📧';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Send Icon */
+.ride_icon-send::before {
+  content: '📤';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Map Pin Large Icon */
+.ride_icon-map-pin-large::before {
+  content: '📍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Social Media Icons */
+.ride_icon-facebook::before {
+  content: '📘';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ride_icon-twitter::before {
+  content: '🐦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ride_icon-instagram::before {
+  content: '📷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ride_icon-youtube::before {
+  content: '📺';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ride_icon-linkedin::before {
+  content: '💼';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Small Icons */
+.ride_icon-mail-small::before {
+  content: '📧';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ride_icon-phone-small::before {
+  content: '📞';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ride_icon-map-pin-small::before {
+  content: '📍';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Menu and Close Icons */
+.ride_icon-menu {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.ride_icon-menu::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.ride_icon-menu::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.ride_icon-close {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.ride_icon-close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.ride_icon-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+/* Icon Sizes */
+.ride_icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.ride_icon-sm::before {
+  font-size: 12px !important;
+}
+
+.ride_icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.ride_icon-lg::before {
+  font-size: 24px !important;
+}
+
+.ride_icon-xl {
+  width: 48px;
+  height: 48px;
+}
+
+.ride_icon-xl::before {
+  font-size: 36px !important;
+} 

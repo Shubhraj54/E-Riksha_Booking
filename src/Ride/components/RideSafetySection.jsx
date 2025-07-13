@@ -1,5 +1,8 @@
 'use client'
 
+import '../Style/safety.css';
+import '../Style/icons.css';
+
 const safetyFeatures = [
   {
     iconClass: 'ride_icon-user-check',
@@ -34,7 +37,7 @@ const safetyStats = [
   { number: '0', label: 'Major Incidents' }
 ]
 
-const SafetySection = () => {
+const RideSafetySection = () => {
   return (
     <section id="safety" className="ride_safety-section">
       <div className="ride_safety-container">
@@ -198,4 +201,4 @@ const SafetySection = () => {
   )
 }
 
-export default SafetySection 
+export default RideSafetySection 

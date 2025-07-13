@@ -1,6 +1,10 @@
 'use client'
 
-const DownloadSection = () => {
+import '../Style/download.css';
+import '../Style/icons.css';
+import { brandConfig } from '../config/brandConfig';
+
+const RideDownloadSection = () => {
   return (
     <section id="download" className="ride_download-section">
       <div className="ride_download-container">
@@ -8,10 +12,10 @@ const DownloadSection = () => {
           {/* Left Content */}
           <div className="ride_download-text">
             <h2 className="ride_download-title">
-              Download <span className="ride_gradient-text">Rapido App</span>
+              Download <span className="ride_gradient-text">{brandConfig.app.name} App</span>
             </h2>
             <p className="ride_download-subtitle">
-              Get the Rapido app and experience the fastest, safest, and most affordable 
+              Get the {brandConfig.app.name} app and experience the fastest, safest, and most affordable 
               bike taxi service in India. Available on iOS and Android.
             </p>
 
@@ -88,7 +92,7 @@ const DownloadSection = () => {
               <div className="ride_download-phone-screen">
                 <div className="ride_app-preview-header">
                   <div className="ride_app-preview-logo">R</div>
-                  <div className="ride_app-preview-title">Rapido</div>
+                  <div className="ride_app-preview-title">{brandConfig.app.name}</div>
                 </div>
                 <div className="ride_app-preview-content">
                   <div className="ride_app-preview-location">
@@ -142,4 +146,4 @@ const DownloadSection = () => {
   )
 }
 
-export default DownloadSection 
+export default RideDownloadSection 

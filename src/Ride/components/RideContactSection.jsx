@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import '../Style/contact.css';
+import '../Style/icons.css';
+import { brandConfig } from '../config/brandConfig';
 
-const ContactSection = () => {
+const RideContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -47,8 +50,8 @@ const ContactSection = () => {
               </div>
               <div className="ride_contact-info-content">
                 <h3 className="ride_contact-info-title">Email Us</h3>
-                <p className="ride_contact-info-desc">support@rapido.com</p>
-                <p className="ride_contact-info-desc">business@rapido.com</p>
+                <p className="ride_contact-info-desc">{brandConfig.email.support}</p>
+                <p className="ride_contact-info-desc">{brandConfig.email.business}</p>
               </div>
             </div>
 
@@ -58,7 +61,7 @@ const ContactSection = () => {
               </div>
               <div className="ride_contact-info-content">
                 <h3 className="ride_contact-info-title">Call Us</h3>
-                <p className="ride_contact-info-desc">+91 1800-123-4567</p>
+                <p className="ride_contact-info-desc">{brandConfig.phone}</p>
                 <p className="ride_contact-info-desc">24/7 Customer Support</p>
               </div>
             </div>
@@ -69,8 +72,8 @@ const ContactSection = () => {
               </div>
               <div className="ride_contact-info-content">
                 <h3 className="ride_contact-info-title">Visit Us</h3>
-                <p className="ride_contact-info-desc">Rapido Headquarters</p>
-                <p className="ride_contact-info-desc">Bangalore, Karnataka, India</p>
+                <p className="ride_contact-info-desc">{brandConfig.address.split(',')[0]}</p>
+                <p className="ride_contact-info-desc">{brandConfig.address.split(',').slice(1).join(',').trim()}</p>
               </div>
             </div>
 
@@ -179,4 +182,4 @@ const ContactSection = () => {
   )
 }
 
-export default ContactSection 
+export default RideContactSection 

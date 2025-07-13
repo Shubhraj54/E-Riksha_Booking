@@ -1,0 +1,499 @@
+/* Safety CSS - Safety section styles for the Ride app */
+
+.ride_safety-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.ride_safety-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Header */
+.ride_safety-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ride_safety-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1F2937;
+}
+
+.ride_safety-subtitle {
+  font-size: 1.125rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Safety Features Grid */
+.ride_safety-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .ride_safety-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ride_safety-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ride_safety-feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #E5E7EB;
+}
+
+.ride_safety-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ride_safety-feature-icon-bg {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.ride_safety-feature-icon-bg-green {
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.ride_safety-feature-icon-bg-blue {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.ride_safety-feature-icon-bg-purple {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+}
+
+.ride_safety-feature-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.ride_safety-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1F2937;
+}
+
+.ride_safety-feature-desc {
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* Safety Stats */
+.ride_safety-stats-section {
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .ride_safety-stats-section {
+    margin-bottom: 100px;
+  }
+}
+
+.ride_safety-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ride_safety-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ride_safety-stat-item {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.ride_safety-stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #10B981;
+  margin-bottom: 8px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .ride_safety-stat-number {
+    font-size: 3rem;
+  }
+}
+
+.ride_safety-stat-label {
+  color: #6B7280;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Safety Process */
+.ride_safety-process {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .ride_safety-process {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.ride_safety-process-content {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .ride_safety-process-content {
+    order: 1;
+  }
+}
+
+.ride_safety-process-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #1F2937;
+}
+
+@media (min-width: 768px) {
+  .ride_safety-process-title {
+    font-size: 2.5rem;
+  }
+}
+
+.ride_safety-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ride_safety-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.ride_safety-step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10B981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.ride_safety-step-content {
+  flex: 1;
+}
+
+.ride_safety-step-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1F2937;
+}
+
+.ride_safety-step-desc {
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* Safety Dashboard */
+.ride_safety-dashboard {
+  order: 1;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .ride_safety-dashboard {
+    order: 2;
+  }
+}
+
+.ride_safety-dashboard-bg {
+  background: linear-gradient(135deg, #F0FDF4, #ECFDF5);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ride_safety-dashboard-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.ride_safety-dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ride_safety-dashboard-icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ride_safety-dashboard-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.ride_safety-dashboard-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.ride_safety-dashboard-subtitle {
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+/* Safety Status List */
+.ride_safety-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ride_safety-status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.ride_safety-status-green {
+  border-left: 4px solid #10B981;
+}
+
+.ride_safety-status-blue {
+  border-left: 4px solid #3B82F6;
+}
+
+.ride_safety-status-purple {
+  border-left: 4px solid #8B5CF6;
+}
+
+.ride_safety-status-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ride_safety-status-icon {
+  color: #10B981;
+  font-size: 16px;
+}
+
+.ride_safety-status-green .ride_safety-status-icon {
+  color: #10B981;
+}
+
+.ride_safety-status-blue .ride_safety-status-icon {
+  color: #3B82F6;
+}
+
+.ride_safety-status-purple .ride_safety-status-icon {
+  color: #8B5CF6;
+}
+
+.ride_safety-status-text {
+  font-weight: 500;
+  color: #374151;
+}
+
+.ride_safety-status-green .ride_safety-status-text {
+  color: #10B981;
+}
+
+.ride_safety-status-blue .ride_safety-status-text {
+  color: #3B82F6;
+}
+
+.ride_safety-status-purple .ride_safety-status-text {
+  color: #8B5CF6;
+}
+
+.ride_safety-status-indicator {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #10B981;
+  color: white;
+}
+
+.ride_safety-status-green .ride_safety-status-indicator {
+  background: #10B981;
+}
+
+.ride_safety-status-blue .ride_safety-status-indicator {
+  background: #3B82F6;
+}
+
+.ride_safety-status-purple .ride_safety-status-indicator {
+  background: #8B5CF6;
+}
+
+/* Learn Button */
+.ride_safety-learn-button {
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ride_safety-learn-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Floating Safety Elements */
+.ride_safety-floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.ride_safety-floating-element {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ride_float 3s ease-in-out infinite;
+}
+
+.ride_safety-floating-top {
+  top: 20px;
+  right: 20px;
+  animation-delay: 0s;
+}
+
+.ride_safety-floating-bottom {
+  bottom: 20px;
+  left: 20px;
+  animation-delay: 1.5s;
+}
+
+.ride_safety-floating-icon-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ride_safety-floating-green {
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.ride_safety-floating-blue {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.ride_safety-floating-icon {
+  color: white;
+  font-size: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ride_safety-section {
+    padding: 60px 0;
+  }
+  
+  .ride_safety-title,
+  .ride_safety-process-title {
+    font-size: 1.75rem;
+  }
+  
+  .ride_safety-features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ride_safety-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .ride_safety-process {
+    gap: 40px;
+  }
+  
+  .ride_safety-floating-elements {
+    display: none;
+  }
+} 

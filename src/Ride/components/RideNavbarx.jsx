@@ -1,13 +1,22 @@
 'use client'
 
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom'; 
+import '../Style/navbar.css';
+import '../Style/icons.css'; 
 
-const Navbarx = () => {
+const RideNavbarx = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
   }
 
   return (<>
@@ -20,21 +29,24 @@ const Navbarx = () => {
 
         {/* Desktop Menu */}
         <div className="ride_navbar-menu">
-          <a href="#home" className="ride_navbar-menu-item">
+          <button onClick={() => scrollToSection('home')} className="ride_navbar-menu-item">
             <span className="ride_navbar-menu-link">Home</span>
-          </a>
-          <a href="#services" className="ride_navbar-menu-item">
+          </button>
+          <button onClick={() => scrollToSection('services')} className="ride_navbar-menu-item">
             <span className="ride_navbar-menu-link">Services</span>
-          </a>
-          <a href="#safety" className="ride_navbar-menu-item">
+          </button>
+          <button onClick={() => scrollToSection('safety')} className="ride_navbar-menu-item">
             <span className="ride_navbar-menu-link">Safety</span>
-          </a>
-          <a href="#about" className="ride_navbar-menu-item">
+          </button>
+          <button onClick={() => scrollToSection('about')} className="ride_navbar-menu-item">
             <span className="ride_navbar-menu-link">About</span>
-          </a>
-          <a href="#contact" className="ride_navbar-menu-item">
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="ride_navbar-menu-item">
             <span className="ride_navbar-menu-link">Contact</span>
-          </a>
+          </button>
+          <button onClick={() => scrollToSection('download')} className="ride_navbar-menu-item">
+            <span className="ride_navbar-menu-link">Download</span>
+          </button>
         </div>
 
         {/* CTA Buttons */}
@@ -60,21 +72,24 @@ const Navbarx = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="ride_navbar-mobile-menu">
-          <a href="#home" className="ride_navbar-mobile-item" onClick={toggleMenu}>
+          <button onClick={() => scrollToSection('home')} className="ride_navbar-mobile-item">
             Home
-          </a>
-          <a href="#services" className="ride_navbar-mobile-item" onClick={toggleMenu}>
+          </button>
+          <button onClick={() => scrollToSection('services')} className="ride_navbar-mobile-item">
             Services
-          </a>
-          <a href="#safety" className="ride_navbar-mobile-item" onClick={toggleMenu}>
+          </button>
+          <button onClick={() => scrollToSection('safety')} className="ride_navbar-mobile-item">
             Safety
-          </a>
-          <a href="#about" className="ride_navbar-mobile-item" onClick={toggleMenu}>
+          </button>
+          <button onClick={() => scrollToSection('about')} className="ride_navbar-mobile-item">
             About
-          </a>
-          <a href="#contact" className="ride_navbar-mobile-item" onClick={toggleMenu}>
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="ride_navbar-mobile-item">
             Contact
-          </a>
+          </button>
+          <button onClick={() => scrollToSection('download')} className="ride_navbar-mobile-item">
+            Download
+          </button>
           <div className="ride_navbar-mobile-cta">
             <button className="ride_navbar-mobile-button ride_navbar-mobile-button-secondary">
               Login
@@ -87,9 +102,9 @@ const Navbarx = () => {
         
       )}
     </nav>
-    <Outlet /></>
+    </>
     
   )
 }
 
-export default Navbarx 
+export default RideNavbarx 

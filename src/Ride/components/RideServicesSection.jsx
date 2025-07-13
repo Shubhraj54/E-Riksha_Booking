@@ -1,5 +1,9 @@
 'use client'
 
+import '../Style/services.css';
+import '../Style/icons.css';
+import { brandConfig } from '../config/brandConfig';
+
 const services = [
   {
     id: 1,
@@ -53,7 +57,7 @@ const features = [
   }
 ]
 
-const ServicesSection = () => {
+const RideServicesSection = () => {
   return (
     <section id="services" className="ride_services-section">
       <div className="ride_services-container">
@@ -110,7 +114,7 @@ const ServicesSection = () => {
         <div className="ride_features-section">
           <div className="ride_features-header">
             <h3 className="ride_features-title">
-              Why Choose <span className="ride_gradient-text">Rapido</span>?
+              Why Choose <span className="ride_gradient-text">{brandConfig.name}</span>?
             </h3>
             <p className="ride_features-desc">
               We provide the best transportation experience with safety, speed, and affordability at the core.
@@ -156,4 +160,4 @@ const ServicesSection = () => {
   )
 }
 
-export default ServicesSection 
+export default RideServicesSection 

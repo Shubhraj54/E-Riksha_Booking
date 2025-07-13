@@ -1,0 +1,376 @@
+/* Services CSS - Services section styles for the Ride app */
+
+.ride_services-section {
+  padding: 80px 0;
+  background: #F9FAFB;
+}
+
+.ride_services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Header */
+.ride_services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ride_services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1F2937;
+}
+
+.ride_services-subtitle {
+  font-size: 1.125rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Services Grid */
+.ride_services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .ride_services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ride_services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ride_service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #E5E7EB;
+}
+
+.ride_service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.ride_service-card-blue {
+  border-top: 4px solid #3B82F6;
+}
+
+.ride_service-card-green {
+  border-top: 4px solid #10B981;
+}
+
+.ride_service-card-purple {
+  border-top: 4px solid #8B5CF6;
+}
+
+/* Popular Badge */
+.ride_service-popular {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+}
+
+.ride_service-popular-badge {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Service Icon */
+.ride_service-icon-bg {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ride_service-icon-bg-blue {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.ride_service-icon-bg-green {
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.ride_service-icon-bg-purple {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+}
+
+.ride_service-icon {
+  color: white;
+  font-size: 24px;
+}
+
+/* Service Content */
+.ride_service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1F2937;
+}
+
+.ride_service-desc {
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Service Features */
+.ride_service-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.ride_service-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.ride_service-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ride_service-dot-blue {
+  background: #3B82F6;
+}
+
+.ride_service-dot-green {
+  background: #10B981;
+}
+
+.ride_service-dot-purple {
+  background: #8B5CF6;
+}
+
+/* Service Button */
+.ride_service-button {
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ride_service-button-blue {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: white;
+}
+
+.ride_service-button-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.ride_service-button-green {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+.ride_service-button-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.ride_service-button-purple {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: white;
+}
+
+.ride_service-button-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Features Section */
+.ride_features-section {
+  margin-bottom: 80px;
+}
+
+.ride_features-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.ride_features-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1F2937;
+}
+
+.ride_features-desc {
+  color: #6B7280;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ride_features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .ride_features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ride_features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ride_feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #E5E7EB;
+}
+
+.ride_feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ride_feature-icon-bg {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.ride_feature-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.ride_feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1F2937;
+}
+
+.ride_feature-desc {
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* Stats Section */
+.ride_stats-section {
+  text-align: center;
+}
+
+.ride_stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ride_stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ride_stat-item {
+  text-align: center;
+}
+
+.ride_stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #10B981;
+  margin-bottom: 8px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .ride_stat-number {
+    font-size: 3rem;
+  }
+}
+
+.ride_stat-label {
+  color: #6B7280;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ride_services-section {
+    padding: 60px 0;
+  }
+  
+  .ride_services-title,
+  .ride_features-title {
+    font-size: 1.75rem;
+  }
+  
+  .ride_services-grid {
+    gap: 24px;
+  }
+  
+  .ride_service-card {
+    padding: 24px;
+  }
+  
+  .ride_features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ride_stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+} 

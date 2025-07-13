@@ -1,6 +1,9 @@
 'use client'
 
-const HeroSection = () => {
+import '../Style/hero.css';
+import { brandConfig } from '../config/brandConfig';
+
+const RideHeroSection = () => {
   return (
     <section id="home" className="ride_hero">
       {/* Background Elements */}
@@ -75,7 +78,7 @@ const HeroSection = () => {
             <div className="ride_phone-screen">
               <div className="ride_app-header">
                 <div className="ride_app-logo">R</div>
-                <div className="ride_app-title">Rapido</div>
+                <div className="ride_app-title">{brandConfig.app.name}</div>
               </div>
               <div className="ride_app-content">
                 <div className="ride_location-input">
@@ -123,4 +126,4 @@ const HeroSection = () => {
   )
 }
 
-export default HeroSection 
+export default RideHeroSection 
